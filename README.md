@@ -1,7 +1,7 @@
 # Network Learning Project
 
 ## Overview
-This projects are designed to help you understand various networking concepts and technologies such as DHCP, DNS, IP addressing, routing, network security, and containerization with Docker and LXC.
+These projects are designed to help you understand various networking concepts and technologies such as DHCP, DNS, IP addressing, routing, network security, and containerization with Docker and LXC.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -15,7 +15,7 @@ This projects are designed to help you understand various networking concepts an
 
 
 ## Usage
-1. Run the main script: `python main.py`
+1. Navigate to the project you're interested in.
 2. Follow the on-screen instructions to explore different networking concepts.
 
 ## Concepts Covered
