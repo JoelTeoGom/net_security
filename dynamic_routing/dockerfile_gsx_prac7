@@ -1,0 +1,15 @@
+FROM debian:buster-slim
+MAINTAINER Joel Teodoro
+
+# Instal·lació de paquets necessaris
+RUN apt-get update && apt-get install -y \
+    initscripts \
+    quagga-ripd \
+    iputils-ping \
+    traceroute
+
+# Afegir el fitxer de configuració
+ADD ./prac7_config_rip.sh /root
+
+# Comanda per defecte
+CMD [ "/bin/bash" ]

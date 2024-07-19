@@ -1,0 +1,15 @@
+# Fitxer: dockerfile_gsx_prac5
+# vim: syntax=dockerfile
+FROM gsx:prac3
+MAINTAINER Professor GSX
+
+# Agregar el repositorio no gratuito
+RUN echo "deb https://deb.debian.org/debian/ bullseye non-free" >/etc/apt/sources.list.d/non-free.list \
+    && apt update
+
+# Instalar paquetes adicionales
+RUN apt-get install -y --no-install-recommends rsyslog snmp snmpd snmp-mibs-downloader
+
+# Copiar el archivo de parche de MIB y aplicarlo
+COPY SNMPv2-PDU.diff /root
+RUN patch /usr/share/snmp/mibs/ietf/SNMPv2-PDU </root/SNMPv2-PDU.diff

@@ -1,0 +1,130 @@
+default via [35m10.179.4.2 [0mdev [36mlink4_1_veth1 [0mproto zebra metric 20 
+[35m10.179.1.0/30 [0mvia [35m10.179.4.2 [0mdev [36mlink4_1_veth1 [0mproto zebra metric 20 
+[35m10.179.2.0/30 [0mvia [35m10.179.3.1 [0mdev [36mlink3_4_veth2 [0mproto zebra metric 20 
+[35m10.179.3.0/30 [0mdev [36mlink3_4_veth2 [0mproto kernel scope link src [35m10.179.3.2 [0m
+[35m10.179.4.0/30 [0mdev [36mlink4_1_veth1 [0mproto kernel scope link src [35m10.179.4.1 [0m
+Building configuration...
+
+Current configuration:
+!
+!
+interface link3_4_veth2
+!
+interface link4_1_veth1
+!
+interface lo
+!
+router rip
+ version 2
+ network 10.179.1.0/30
+ network 10.179.2.0/30
+ network 10.179.3.0/30
+ network 10.179.4.0/30
+!
+ip forwarding
+!
+line vty
+!
+end
+Codes: K - kernel route, C - connected, S - static, R - RIP,
+       O - OSPF, I - IS-IS, B - BGP, P - PIM, A - Babel, N - NHRP,
+       > - selected route, * - FIB route
+
+R>* 0.0.0.0/0 [120/2] via 10.179.4.2, link4_1_veth1, 00:48:15
+R>* 10.179.1.0/30 [120/2] via 10.179.4.2, link4_1_veth1, 00:48:15
+R>* 10.179.2.0/30 [120/2] via 10.179.3.1, link3_4_veth2, 00:48:15
+C>* 10.179.3.0/30 is directly connected, link3_4_veth2
+C>* 10.179.4.0/30 is directly connected, link4_1_veth1
+C>* 127.0.0.0/8 is directly connected, lo
+Routing Protocol is "rip"
+  Sending updates every 30 seconds with +/-50%, next due in 20 seconds
+  Timeout after 180 seconds, garbage collect after 120 seconds
+  Outgoing update filter list for all interface is not set
+  Incoming update filter list for all interface is not set
+  Default redistribution metric is 1
+  Redistributing:
+  Default version control: send version 2, receive version 2 
+    Interface        Send  Recv   Key-chain
+    link3_4_veth2    2     2      
+    link4_1_veth1    2     2      
+  Routing for Networks:
+    10.179.1.0/30
+    10.179.2.0/30
+    10.179.3.0/30
+    10.179.4.0/30
+  Routing Information Sources:
+    Gateway          BadPackets BadRoutes  Distance Last Update
+    10.179.3.1               0         0       120   00:00:09
+    10.179.4.2               0         0       120   00:00:19
+  Distance: (default is 120)
+traceroute to 10.179.4.1 (10.179.4.1), 30 hops max, 60 byte packets
+ 1  10.179.4.1  0.029 ms  0.005 ms  0.003 ms
+traceroute to 10.179.4.1 (10.179.4.1), 30 hops max, 60 byte packets
+ 1  10.179.4.1  0.020 ms  0.007 ms  0.004 ms
+traceroute to 10.179.4.1 (10.179.4.1), 30 hops max, 60 byte packets
+ 1  10.179.4.1  0.031 ms * *
+default via [35m10.179.4.2 [0mdev [36mlink4_1_veth1 [0mproto zebra metric 20 
+[35m10.179.1.0/30 [0mvia [35m10.179.4.2 [0mdev [36mlink4_1_veth1 [0mproto zebra metric 20 
+[35m10.179.2.0/30 [0mvia [35m10.179.3.1 [0mdev [36mlink3_4_veth2 [0mproto zebra metric 20 
+[35m10.179.3.0/30 [0mdev [36mlink3_4_veth2 [0mproto kernel scope link src [35m10.179.3.2 [0m
+[35m10.179.4.0/30 [0mdev [36mlink4_1_veth1 [0mproto kernel scope link src [35m10.179.4.1 [0m
+Building configuration...
+
+Current configuration:
+!
+!
+interface link3_4_veth2
+!
+interface link4_1_veth1
+!
+interface lo
+!
+router rip
+ version 2
+ network 10.179.1.0/30
+ network 10.179.2.0/30
+ network 10.179.3.0/30
+ network 10.179.4.0/30
+!
+ip forwarding
+!
+line vty
+!
+end
+Codes: K - kernel route, C - connected, S - static, R - RIP,
+       O - OSPF, I - IS-IS, B - BGP, P - PIM, A - Babel, N - NHRP,
+       > - selected route, * - FIB route
+
+R>* 0.0.0.0/0 [120/2] via 10.179.4.2, link4_1_veth1, 00:53:04
+R>* 10.179.1.0/30 [120/2] via 10.179.4.2, link4_1_veth1, 00:53:04
+R>* 10.179.2.0/30 [120/2] via 10.179.3.1, link3_4_veth2, 00:53:04
+C>* 10.179.3.0/30 is directly connected, link3_4_veth2
+C>* 10.179.4.0/30 is directly connected, link4_1_veth1
+C>* 127.0.0.0/8 is directly connected, lo
+Routing Protocol is "rip"
+  Sending updates every 30 seconds with +/-50%, next due in 11 seconds
+  Timeout after 180 seconds, garbage collect after 120 seconds
+  Outgoing update filter list for all interface is not set
+  Incoming update filter list for all interface is not set
+  Default redistribution metric is 1
+  Redistributing:
+  Default version control: send version 2, receive version 2 
+    Interface        Send  Recv   Key-chain
+    link3_4_veth2    2     2      
+    link4_1_veth1    2     2      
+  Routing for Networks:
+    10.179.1.0/30
+    10.179.2.0/30
+    10.179.3.0/30
+    10.179.4.0/30
+  Routing Information Sources:
+    Gateway          BadPackets BadRoutes  Distance Last Update
+    10.179.3.1               0         0       120   00:00:07
+    10.179.4.2               0         0       120   00:00:15
+  Distance: (default is 120)
+traceroute to 10.179.4.1 (10.179.4.1), 30 hops max, 60 byte packets
+ 1  10.179.4.1  0.023 ms  0.004 ms  0.004 ms
+traceroute to 10.179.4.1 (10.179.4.1), 30 hops max, 60 byte packets
+ 1  10.179.4.1  0.018 ms  0.007 ms  0.004 ms
+traceroute to 10.179.4.1 (10.179.4.1), 30 hops max, 60 byte packets
+ 1  10.179.4.2  3069.299 ms !H  3069.270 ms !H  3069.261 ms !H

@@ -1,0 +1,10 @@
+# Fitxer: dockerfile_gsx_prac1
+# vim: syntax=dockerfile
+FROM debian:bullseye-slim
+MAINTAINER Professor GSX
+RUN apt update
+RUN apt-get install -y --no-install-recommends \
+iproute2 bind9-host iputils-ping ifupdown
+COPY ./labx1_TeodoroGomez.tgz /root
+WORKDIR /root
+RUN tar -xzf labx1_TeodoroGomez.tgz

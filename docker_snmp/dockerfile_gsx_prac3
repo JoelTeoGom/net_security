@@ -1,0 +1,6 @@
+# Fitxer: dockerfile_gsx_prac3
+# vim: syntax=dockerfile
+FROM debian:bullseye-slim
+MAINTAINER Professor GSX
+RUN apt update && apt-get install -y --no-install-recommends \
+    dnsutils ifupdown iproute2 iptables iputils-ping isc-dhcp-client nano procps rsyslog tcpdump
